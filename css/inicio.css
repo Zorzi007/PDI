@@ -13,7 +13,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 15px;
+    padding: 0px 30px;
+    position: fixed;
+    z-index: 99;
+    background: white;
 }
 
 .CabecalhoHomePrimeiro {
@@ -48,7 +51,6 @@
 }
 
 .Icones {
-    background: red;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -57,7 +59,7 @@
 }
 
 .Icones .SinoNotificacao {
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .Icones .IconePerfil {
