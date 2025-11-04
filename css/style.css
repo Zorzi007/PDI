@@ -8,10 +8,17 @@
     padding: 0;
 }
 
+:root {
+    --color-purple-dark: #2A003B;
+    --color-purple-medium: #4B006E;
+    --color-purple-lilac: #B57BFF;
+    --color-blue-dark: #1A237E;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     /* Fundo principal em roxo escuro */
-    background-color: #2A003B;
+    background-color: var(--color-purple-dark);
     background-image: none;
     display: flex;
     justify-content: center;
@@ -67,7 +74,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle, rgba(255, 92, 168, 0.45), transparent 60%);
+    background: radial-gradient(circle, rgba(181, 123, 255, 0.45), transparent 60%);
     animation-duration: 20s;
 }
 
@@ -160,14 +167,14 @@ a {
     transition: color 0.3s ease;
 }
 a:hover {
-    color: #FF5CA8;
+    color: var(--color-purple-lilac);
 }
 
 /* --- Botões (Nova paleta) --- */
 .BotaoEntrar {
     border-radius: 20px;
-    border: 1px solid #FF5CA8;
-    background-color: #1A237E;
+    border: 1px solid var(--color-purple-lilac);
+    background-color: var(--color-blue-dark);
     color: #FFFFFF;
     font-size: 12px;
     font-weight: bold;
@@ -180,8 +187,8 @@ a:hover {
 
 .BotaoCadastrar {
     border-radius: 20px;
-    border: 1px solid #FF5CA8;
-    background-color: #1A237E;
+    border: 1px solid var(--color-purple-lilac);
+    background-color: var(--color-blue-dark);
     color: #FFFFFF;
     font-size: 12px;
     font-weight: bold;
@@ -194,8 +201,8 @@ a:hover {
 
 .BotaoEntrar:hover,
 .BotaoCadastrar:hover {
-    background-color: #4B006E;
-    border-color: #B57BFF;
+    background-color: var(--color-purple-medium);
+    border-color: var(--color-purple-lilac);
     box-shadow: 0 10px 24px rgba(75, 0, 110, 0.35);
 }
 
@@ -209,8 +216,8 @@ button:focus {
 
 button.ghost {
     border-radius: 20px;
-    border: 1px solid #FF5CA8;
-    background-color: #1A237E;
+    border: 1px solid var(--color-purple-lilac);
+    background-color: var(--color-blue-dark);
     color: #FFFFFF;
     font-size: 12px;
     font-weight: bold;
@@ -222,8 +229,8 @@ button.ghost {
 }
 
 button.ghost:hover {
-    background-color: #4B006E;
-    border-color: #B57BFF;
+    background-color: var(--color-purple-medium);
+    border-color: var(--color-purple-lilac);
     box-shadow: 0 10px 24px rgba(75, 0, 110, 0.35);
 }
 
@@ -261,8 +268,8 @@ input::placeholder {
 }
 
 .social-container a:hover {
-    background-color: #FF5CA8;
-    border-color: #B57BFF;
+    background-color: var(--color-purple-medium);
+    border-color: var(--color-purple-lilac);
 }
 
 /* --- Overlay Deslizante (Nova paleta) --- */
@@ -278,13 +285,7 @@ input::placeholder {
 }
 
 .overlay {
-    /* Gradiente combinando roxo escuro, roxo claro, rosa e azul escuro */
-    background: #4B006E; 
-    background: -webkit-linear-gradient(to right, #4B006E, #B57BFF, #FF5CA8, #1A237E);
-    background: linear-gradient(to right, #4B006E, #B57BFF, #FF5CA8, #1A237E);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 0 0;
+    background: transparent;
     color: #FFFFFF;
     position: relative;
     left: -100%;
@@ -307,15 +308,20 @@ input::placeholder {
     width: 50%;
     transform: translateX(0);
     transition: transform 0.6s ease-in-out;
+    background: linear-gradient(135deg, var(--color-purple-dark) 0%, var(--color-purple-medium) 55%, var(--color-blue-dark) 100%);
 }
 
 .overlay-left {
     transform: translateX(-20%);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .overlay-right {
     right: 0;
     transform: translateX(0);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 /* --- Animação de Deslizar (Ativada via JS) --- */
