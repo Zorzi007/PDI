@@ -29,62 +29,45 @@ body {
     color: #ffffff;
 }
 
-/* --- Fundo Interativo (Blobs) --- */
+/* --- Fundo Interativo Tecnológico --- */
 
-.background-blobs {
+.background-scene {
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
     z-index: -1;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(181, 123, 255, 0.28), transparent 55%),
+        radial-gradient(circle at 80% 30%, rgba(26, 35, 126, 0.35), transparent 60%),
+        radial-gradient(circle at 15% 80%, rgba(75, 0, 110, 0.32), transparent 60%),
+        var(--color-purple-dark);
 }
 
-.blob {
+.background-scene::after {
+    content: "";
     position: absolute;
-    /* Cores dos blobs ajustadas para a nova paleta */
-    background: radial-gradient(circle, rgba(181, 123, 255, 0.45), transparent 60%);
-    border-radius: 50%;
-    transition: transform 0.5s ease-out;
-    animation: float 20s infinite alternate;
+    inset: -20%;
+    background: conic-gradient(
+        from 120deg,
+        rgba(181, 123, 255, 0.22),
+        rgba(75, 0, 110, 0.08),
+        rgba(26, 35, 126, 0.18),
+        rgba(181, 123, 255, 0.22)
+    );
+    filter: blur(140px);
+    opacity: 0.65;
+    mix-blend-mode: screen;
+    pointer-events: none;
 }
 
-.blob1 {
-    width: 400px;
-    height: 400px;
-    top: -100px;
-    left: -100px;
-    background: radial-gradient(circle, rgba(75, 0, 110, 0.45), transparent 60%);
-    animation-duration: 18s;
-}
-
-.blob2 {
-    width: 500px;
-    height: 500px;
-    bottom: -150px;
-    right: -150px;
-    background: radial-gradient(circle, rgba(26, 35, 126, 0.45), transparent 60%);
-    animation-duration: 22s;
-    animation-delay: -5s;
-}
-
-.blob3 {
-    width: 300px;
-    height: 300px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: radial-gradient(circle, rgba(181, 123, 255, 0.45), transparent 60%);
-    animation-duration: 20s;
-}
-
-@keyframes float {
-    0% {
-        transform: translate(0, 0) scale(1);
-    }
-    100% {
-        transform: translate(40px, 80px) scale(1.2);
-    }
+#background-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    pointer-events: none;
+    opacity: 0.92;
 }
 
 
