@@ -9,8 +9,8 @@
 }
 
 :root {
-    --color-purple-dark: #2A003B;
-    --color-purple-medium: #4B006E;
+    --color-purple-dark: #120019;
+    --color-purple-medium: #2B0041;
     --color-purple-lilac: #B57BFF;
     --color-blue-dark: #1A237E;
 }
@@ -39,9 +39,9 @@ body {
     z-index: -1;
     overflow: hidden;
     background:
-        radial-gradient(circle at 20% 20%, rgba(181, 123, 255, 0.28), transparent 55%),
-        radial-gradient(circle at 80% 30%, rgba(26, 35, 126, 0.35), transparent 60%),
-        radial-gradient(circle at 15% 80%, rgba(75, 0, 110, 0.32), transparent 60%),
+    radial-gradient(circle at 15% 25%, rgba(70, 0, 110, 0.18), transparent 42%),
+        radial-gradient(circle at 70% 28%, rgba(26, 35, 126, 0.22), transparent 55%),
+        radial-gradient(circle at 10% 85%, rgba(40, 0, 65, 0.28), transparent 55%),
         var(--color-purple-dark);
 }
 
@@ -56,8 +56,8 @@ body {
         rgba(26, 35, 126, 0.18),
         rgba(181, 123, 255, 0.22)
     );
-    filter: blur(140px);
-    opacity: 0.65;
+    filter: blur(160px);
+    opacity: 0.32;
     mix-blend-mode: screen;
     pointer-events: none;
 }

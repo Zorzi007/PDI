@@ -167,29 +167,6 @@ if (backgroundCanvas) {
         }
     };
 
-    const drawPointer = (time) => {
-        if (!pointer.active) return;
-
-        const haloRadius = config.pointerInfluence * 0.45;
-        const gradient = ctx.createRadialGradient(pointer.x, pointer.y, 0, pointer.x, pointer.y, haloRadius);
-        gradient.addColorStop(0, 'rgba(181, 123, 255, 0.32)');
-        gradient.addColorStop(0.6, 'rgba(75, 0, 110, 0.18)');
-        gradient.addColorStop(1, 'rgba(42, 0, 59, 0)');
-
-        ctx.globalCompositeOperation = 'screen';
-        ctx.fillStyle = gradient;
-        ctx.beginPath();
-        ctx.arc(pointer.x, pointer.y, haloRadius, 0, Math.PI * 2);
-        ctx.fill();
-
-        ctx.fillStyle = 'rgba(181, 123, 255, 0.85)';
-        const corePulse = 4.5 + Math.sin(time / 200) * 2;
-        ctx.beginPath();
-        ctx.arc(pointer.x, pointer.y, corePulse, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.globalCompositeOperation = 'lighter';
-    };
-
     const animate = (time = 0) => {
         ctx.clearRect(0, 0, width, height);
 
@@ -209,8 +186,6 @@ if (backgroundCanvas) {
             pointer.active = false;
         }
 
-        drawPointer(time);
-
         ctx.globalCompositeOperation = 'source-over';
 
         requestAnimationFrame(animate);
@@ -222,25 +197,6 @@ if (backgroundCanvas) {
         pointer.active = true;
         pointer.lastMove = performance.now();
     };
-
-    document.addEventListener('mousemove', (event) => {
-        updatePointer(event.clientX, event.clientY);
-    });
-
-    document.addEventListener('mouseleave', () => {
-        pointer.active = false;
-    });
-
-    window.addEventListener('touchmove', (event) => {
-        if (event.touches && event.touches.length > 0) {
-            const touch = event.touches[0];
-            updatePointer(touch.clientX, touch.clientY);
-        }
-    }, { passive: true });
-
-    window.addEventListener('touchend', () => {
-        pointer.active = false;
-    });
 
     window.addEventListener('resize', () => {
         resizeCanvas();
