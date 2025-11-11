@@ -10,7 +10,9 @@
     <header class="CabecalhoHome">
         <section class="CabecalhoHomePrimeiro">
             <div class="BotaoSlidingMenu">
-                <i class="bi bi-list BotaoMenu"></i>
+                <button type="button" class="BotaoMenuTrigger" id="menuToggle" aria-label="Abrir menu" aria-controls="mainMenu" aria-expanded="false">
+                    <i class="bi bi-list BotaoMenu"></i>
+                </button>
             </div>
 
             <div class="LogoEniac">
@@ -24,5 +26,65 @@
                 <i class="bi bi-person-fill IconePerfil"></i>
         </section>
     </header>
+
+    <aside class="SlidingMenu" id="mainMenu" aria-hidden="true">
+        <nav class="SlidingMenuNav" aria-label="Navegação principal">
+            <p class="SlidingMenuSectionTitle">Explorar</p>
+            <ul class="SlidingMenuList">
+                <li><a href="inicio.html"><span class="SlidingMenuIcon"><i class="bi bi-house-door"></i></span><span class="SlidingMenuText">Início</span></a></li>
+                <li><a href="consultoria.html"><span class="SlidingMenuIcon"><i class="bi bi-diagram-3"></i></span><span class="SlidingMenuText">Consultoria</span></a></li>
+                <li><a href="extracurriculares.html"><span class="SlidingMenuIcon"><i class="bi bi-stars"></i></span><span class="SlidingMenuText">Extracurriculares</span></a></li>
+                <li><a href="guiadeuso.html"><span class="SlidingMenuIcon"><i class="bi bi-compass"></i></span><span class="SlidingMenuText">Guia de Uso</span></a></li>
+                <li><a href="https://www.infojobs.com.br/" target="_blank" rel="noopener"><span class="SlidingMenuIcon"><i class="bi bi-rocket-takeoff"></i></span><span class="SlidingMenuText">Oportunidades</span></a></li>
+                <li><a href="perfilprofissional.html"><span class="SlidingMenuIcon"><i class="bi bi-person-badge"></i></span><span class="SlidingMenuText">Perfil Profissional</span></a></li>
+                <li><a href="index.html"><span class="SlidingMenuIcon"><i class="bi bi-grid"></i></span><span class="SlidingMenuText">Login/Cadastro</span></a></li>
+            </ul>
+
+            <p class="SlidingMenuSectionTitle">Suporte</p>
+            <ul class="SlidingMenuList">
+                <li><a href="https://api.whatsapp.com/send?phone=5511912992183&text=%20%20%20%20%20%20%20." target="_blank" rel="noopener"><span class="SlidingMenuIcon"><i class="bi bi-envelope-open"></i></span><span class="SlidingMenuText">Contato</span></a></li>
+            </ul>
+        </nav>
+
+        <div class="SlidingMenuActions">
+            <button type="button" class="SlidingMenuActionButton" data-close-menu>Fechar menu</button>
+        </div>
+    </aside>
+    <div class="SlidingMenuOverlay" id="menuOverlay" hidden></div>
+
+    <script>
+        const menuToggleButton = document.getElementById('menuToggle');
+        const menuCloseButtons = document.querySelectorAll('[data-close-menu]');
+        const slidingMenu = document.getElementById('mainMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const menuLinks = slidingMenu?.querySelectorAll('.SlidingMenuNav a');
+
+        const toggleMenu = (shouldOpen) => {
+            const open = shouldOpen ?? !slidingMenu.classList.contains('open');
+
+            slidingMenu.classList.toggle('open', open);
+            menuOverlay.toggleAttribute('hidden', !open);
+            menuOverlay.classList.toggle('visible', open);
+            document.body.classList.toggle('menu-open', open);
+            slidingMenu.setAttribute('aria-hidden', (!open).toString());
+            menuToggleButton?.setAttribute('aria-expanded', open.toString());
+        };
+
+        menuToggleButton?.addEventListener('click', () => toggleMenu(true));
+        menuCloseButtons.forEach((button) => {
+            button.addEventListener('click', () => toggleMenu(false));
+        });
+        menuOverlay?.addEventListener('click', () => toggleMenu(false));
+
+        menuLinks?.forEach((link) => {
+            link.addEventListener('click', () => toggleMenu(false));
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && slidingMenu.classList.contains('open')) {
+                toggleMenu(false);
+            }
+        });
+    </script>
 </body>
 </html>
