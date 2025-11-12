@@ -52,39 +52,24 @@
     </aside>
     <div class="SlidingMenuOverlay" id="menuOverlay" hidden></div>
 
-    <script>
-        const menuToggleButton = document.getElementById('menuToggle');
-        const menuCloseButtons = document.querySelectorAll('[data-close-menu]');
-        const slidingMenu = document.getElementById('mainMenu');
-        const menuOverlay = document.getElementById('menuOverlay');
-        const menuLinks = slidingMenu?.querySelectorAll('.SlidingMenuNav a');
+    <main class="HomeMain">
+        <section class="CareerProgress" aria-labelledby="careerProgressTitle">
+            <div class="CareerProgress-header">
+                <div class="CareerProgress-heading">
+                    <h1 id="careerProgressTitle">Evolução Extracurricular</h1>
+                    <p class="CareerProgress-subtitle">Acompanhe o impacto das trilhas complementares no seu perfil profissional.</p>
+                </div>
+                <div class="CareerProgress-metrics" data-progress-meter role="progressbar" aria-valuemin="0" aria-valuemax="8" aria-valuenow="0" aria-label="Conclusão de cursos extracurriculares">
+                    <span class="CareerProgress-metric" data-progress-count>0 / 8</span>
+                    <span class="CareerProgress-metric" data-progress-percent>0%</span>
+                </div>
+            </div>
+            <div class="progress-track" data-progress-track></div>
+            <p class="CareerProgress-insight" data-career-summary>Seu perfil de carreira está no ponto de partida. Complete cursos extracurriculares para que possamos indicar suas forças.</p>
+        </section>
+    </main>
 
-        const toggleMenu = (shouldOpen) => {
-            const open = shouldOpen ?? !slidingMenu.classList.contains('open');
-
-            slidingMenu.classList.toggle('open', open);
-            menuOverlay.toggleAttribute('hidden', !open);
-            menuOverlay.classList.toggle('visible', open);
-            document.body.classList.toggle('menu-open', open);
-            slidingMenu.setAttribute('aria-hidden', (!open).toString());
-            menuToggleButton?.setAttribute('aria-expanded', open.toString());
-        };
-
-        menuToggleButton?.addEventListener('click', () => toggleMenu(true));
-        menuCloseButtons.forEach((button) => {
-            button.addEventListener('click', () => toggleMenu(false));
-        });
-        menuOverlay?.addEventListener('click', () => toggleMenu(false));
-
-        menuLinks?.forEach((link) => {
-            link.addEventListener('click', () => toggleMenu(false));
-        });
-
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && slidingMenu.classList.contains('open')) {
-                toggleMenu(false);
-            }
-        });
-    </script>
+    <script src="js/extracurriculares.js"></script>
+    <script src="js/slidingmenu.js"></script>
 </body>
 </html>
