@@ -1,0 +1,371 @@
+/* Importação da fonte */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-purple-dark: #120019;
+    --color-purple-medium: #2B0041;
+    --color-purple-lilac: #B57BFF;
+    --color-blue-dark: #1A237E;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    /* Fundo principal em roxo escuro */
+    background-color: var(--color-purple-dark);
+    background-image: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+/* --- Fundo Interativo Tecnológico --- */
+
+.background-scene {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    background:
+    radial-gradient(circle at 15% 25%, rgba(70, 0, 110, 0.18), transparent 42%),
+        radial-gradient(circle at 70% 28%, rgba(26, 35, 126, 0.22), transparent 55%),
+        radial-gradient(circle at 10% 85%, rgba(40, 0, 65, 0.28), transparent 55%),
+        var(--color-purple-dark);
+}
+
+.background-scene::after {
+    content: "";
+    position: absolute;
+    inset: -20%;
+    background: conic-gradient(
+        from 120deg,
+        rgba(181, 123, 255, 0.22),
+        rgba(75, 0, 110, 0.08),
+        rgba(26, 35, 126, 0.18),
+        rgba(181, 123, 255, 0.22)
+    );
+    filter: blur(160px);
+    opacity: 0.32;
+    mix-blend-mode: screen;
+    pointer-events: none;
+}
+
+#background-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    pointer-events: none;
+    opacity: 0.92;
+}
+
+
+/* --- Contêiner Principal (Efeito Glassmorphism) --- */
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+                0 10px 10px rgba(0,0,0,0.22);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+}
+
+/* --- Formulários --- */
+.form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+    opacity: 1;
+}
+
+.sign-up-container {
+    left: 0;
+    width: 50%;
+    opacity: 0; 
+    z-index: 1; 
+}
+
+
+form {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 20px 0 30px;
+    color: #eee;
+}
+
+span {
+    font-size: 12px;
+    margin: 10px 0;
+    color: #eee;
+}
+
+a {
+    color: #eee;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 15px 0;
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: var(--color-purple-lilac);
+}
+
+/* --- Botões (Nova paleta) --- */
+.BotaoEntrar {
+    border-radius: 20px;
+    border: 1px solid var(--color-purple-lilac);
+    background-color: var(--color-blue-dark);
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in, background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.BotaoCadastrar {
+    border-radius: 20px;
+    border: 1px solid var(--color-purple-lilac);
+    background-color: var(--color-blue-dark);
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in, background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.BotaoEntrar:hover,
+.BotaoCadastrar:hover {
+    background-color: var(--color-purple-medium);
+    border-color: var(--color-purple-lilac);
+    box-shadow: 0 10px 24px rgba(75, 0, 110, 0.35);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:focus {
+    outline: none;
+}
+
+button.ghost {
+    border-radius: 20px;
+    border: 1px solid var(--color-purple-lilac);
+    background-color: var(--color-blue-dark);
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in, background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+button.ghost:hover {
+    background-color: var(--color-purple-medium);
+    border-color: var(--color-purple-lilac);
+    box-shadow: 0 10px 24px rgba(75, 0, 110, 0.35);
+}
+
+input {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+    border-radius: 5px;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+input::placeholder {
+    color: #ddd;
+    opacity: 1;
+}
+
+.form-feedback {
+    min-height: 1.25rem;
+    font-size: 0.85rem;
+    margin: 4px 0 12px;
+    color: #eee;
+    transition: color 0.2s ease;
+}
+
+.form-feedback.is-error {
+    color: #ff8a80;
+}
+
+.form-feedback.is-success {
+    color: #8bf5c4;
+}
+
+button.is-loading {
+    opacity: 0.7;
+    cursor: wait;
+}
+
+.social-container {
+    margin: 20px 0;
+}
+
+.social-container a {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    height: 40px;
+    width: 40px;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.social-container a:hover {
+    background-color: var(--color-purple-medium);
+    border-color: var(--color-purple-lilac);
+}
+
+/* --- Overlay Deslizante (Nova paleta) --- */
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+}
+
+.overlay {
+    background: transparent;
+    color: #FFFFFF;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.overlay-panel {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+    background: linear-gradient(135deg, var(--color-purple-dark) 0%, var(--color-purple-medium) 55%, var(--color-blue-dark) 100%);
+}
+
+.overlay-left {
+    transform: translateX(-20%);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.overlay-right {
+    right: 0;
+    transform: translateX(0);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* --- Animação de Deslizar (Ativada via JS) --- */
+
+.container.right-panel-active .sign-in-container {
+    transform: translateX(100%);
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.right-panel-active .sign-up-container {
+    transform: translateX(100%);
+    opacity: 1; 
+    z-index: 5; 
+    animation: show 0.6s;
+}
+
+@keyframes show {
+    0%, 49.99% {
+        opacity: 0;
+        z-index: 1;
+    }
+    50%, 100% {
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+.container.right-panel-active .overlay-container {
+    transform: translateX(-100%);
+}
+
+.container.right-panel-active .overlay {
+    transform: translateX(50%);
+}
+
+.container.right-panel-active .overlay-left {
+    transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-right {
+    transform: translateX(20%);
+}
