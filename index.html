@@ -13,58 +13,62 @@
 </head>
 <body>
 
-    <div class="background-blobs">
-        <div class="blob blob1"></div>
-        <div class="blob blob2"></div>
-        <div class="blob blob3"></div>
-    </div>
+    <aside class="fundo-interativo" aria-hidden="true">
+        <canvas id="canvas-particulas"></canvas>
+        <div class="grade-tecnologica"></div>
+        <span class="linha-tecnologica linha-a" data-deslocamento="18"></span>
+        <span class="linha-tecnologica linha-b" data-deslocamento="-26"></span>
+        <span class="linha-tecnologica linha-c" data-deslocamento="14"></span>
+        <span class="nodo-tecnologico nodo-a" data-deslocamento="22"></span>
+        <span class="nodo-tecnologico nodo-b" data-deslocamento="-30"></span>
+    </aside>
 
-    <div class="container" id="container">
+    <main class="area-autenticacao" id="area-autenticacao">
         
-        <div class="form-container sign-up-container">
+        <section class="painel-formulario painel-cadastro">
             <form action="#">
                 <h1>Criar Conta</h1>
-                <div class="social-container">
-                    <a href="#" class="social"><i class="fab fa-google"></i></a>
-                </div>
+                <nav class="atalhos-sociais" aria-label="Opções de cadastro social">
+                    <a href="#" class="atalho-social"><i class="fab fa-google"></i></a>
+                </nav>
                 <span>ou use seu e-mail para cadastrar</span>
                 <input type="text" placeholder="Nome" />
                 <input type="email" placeholder="Email" />
                 <input type="password" placeholder="Senha" />
-                <button>Cadastrar</button>
+                <button type="submit">Cadastrar</button>
             </form>
-        </div>
+        </section>
 
-        <div class="form-container sign-in-container">
+        <section class="painel-formulario painel-login">
             <form action="#">
                 <h1>Entrar</h1>
-                <div class="social-container">
-                    <a href="#" class="social"><i class="fab fa-google"></i></a>
-                </div>
+                <nav class="atalhos-sociais" aria-label="Opções de login social">
+                    <a href="#" class="atalho-social"><i class="fab fa-google"></i></a>
+                </nav>
                 <span>ou use sua conta</span>
                 <input type="email" placeholder="Email" />
                 <input type="password" placeholder="Senha" />
                 <a href="#">Esqueceu sua senha?</a>
-                <button>Entrar</button>
+                <button id="botaoEntrar" type="submit">Entrar</button>
             </form>
-        </div>
+        </section>
 
-        <div class="overlay-container">
-            <div class="overlay">
-                <div class="overlay-panel overlay-left">
+        <section class="faixa-interativa">
+            <section class="faixa-dinamica">
+                <article class="painel-dinamico painel-dinamico-esquerdo">
                     <h1>Bem-vindo de Volta!</h1>
                     <p>Para se manter conectado, faça o login com suas informações</p>
-                    <button class="ghost" id="signIn">Entrar</button>
-                </div>
+                    <button class="botao-transparente" id="botaoEntrarFaixa" type="button">Entrar</button>
+                </article>
                 
-                <div class="overlay-panel overlay-right">
+                <article class="painel-dinamico painel-dinamico-direito">
                     <h1>Olá, Aluno!</h1>
                     <p>Insira seus dados e comece sua jornada na ENIAC</p>
-                    <button class="ghost" id="signUp">Cadastrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
+                    <button class="botao-transparente" id="botaoCadastrar" type="button">Cadastrar</button>
+                </article>
+            </section>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
