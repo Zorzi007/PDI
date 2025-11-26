@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Plano de Desenvolvimento Individual</title>
+	<link rel="stylesheet" href="css/inicio.css">
+	<link rel="stylesheet" href="css/formulario.css">
+</head>
+<body class="menu-disabled">
+	<noscript class="noscript">Ative o JavaScript do navegador para preencher o formulário.</noscript>
+
+	<header class="CabecalhoHome">
+		<section class="CabecalhoHomePrimeiro">
+			<div class="BotaoSlidingMenu">
+				<button type="button" class="BotaoMenuTrigger" id="menuToggle" aria-label="Abrir menu" aria-controls="mainMenu" aria-expanded="false">
+					<i class="bi bi-list BotaoMenu"></i>
+				</button>
+			</div>
+
+			<div class="LogoEniac">
+				<img src="img/LogoEniac.png" class="EniacLogo" alt="Logo ENIAC">
+			</div>
+		</section>
+
+		<section class="Icones">
+			<i class="bi bi-bell-fill SinoNotificacao"></i>
+			<i class="bi bi-person-fill IconePerfil"></i>
+		</section>
+	</header>
+
+	<aside class="SlidingMenu" id="mainMenu" aria-hidden="true">
+		<nav class="SlidingMenuNav" aria-label="Navegação principal">
+			<p class="SlidingMenuSectionTitle">Explorar</p>
+			<ul class="SlidingMenuList">
+				<li><a href="inicio.html"><span class="SlidingMenuIcon"><i class="bi bi-house-door"></i></span><span class="SlidingMenuText">Início</span></a></li>
+				<li><a href="consultoria.html"><span class="SlidingMenuIcon"><i class="bi bi-diagram-3"></i></span><span class="SlidingMenuText">Consultoria</span></a></li>
+				<li><a href="extracurriculares.html"><span class="SlidingMenuIcon"><i class="bi bi-stars"></i></span><span class="SlidingMenuText">Extracurriculares</span></a></li>
+				<li><a href="guiadeuso.html"><span class="SlidingMenuIcon"><i class="bi bi-compass"></i></span><span class="SlidingMenuText">Guia de Uso</span></a></li>
+				<li><a href="https://www.infojobs.com.br/" target="_blank" rel="noopener"><span class="SlidingMenuIcon"><i class="bi bi-rocket-takeoff"></i></span><span class="SlidingMenuText">Oportunidades</span></a></li>
+				<li><a href="perfilprofissional.html"><span class="SlidingMenuIcon"><i class="bi bi-person-badge"></i></span><span class="SlidingMenuText">Perfil Profissional</span></a></li>
+				<li><a href="index.html"><span class="SlidingMenuIcon"><i class="bi bi-grid"></i></span><span class="SlidingMenuText">Login/Cadastro</span></a></li>
+			</ul>
+
+			<p class="SlidingMenuSectionTitle">Suporte</p>
+			<ul class="SlidingMenuList">
+				<li><a href="https://api.whatsapp.com/send?phone=5511912992183&text=%20%20%20%20%20%20%20." target="_blank" rel="noopener"><span class="SlidingMenuIcon"><i class="bi bi-envelope-open"></i></span><span class="SlidingMenuText">Contato</span></a></li>
+			</ul>
+		</nav>
+
+		<div class="SlidingMenuActions">
+			<button type="button" class="SlidingMenuActionButton" data-close-menu>Fechar menu</button>
+		</div>
+	</aside>
+	<div class="SlidingMenuOverlay" id="menuOverlay" hidden></div>
+
+	<main class="HomeMain">
+		<section class="pdi-card" aria-labelledby="pdiTitle">
+			<header class="intro">
+				<p class="badge">PDI online</p>
+				<h1 id="pdiTitle">Formulário de Plano de Desenvolvimento Individual</h1>
+				<p class="lead">Primeiro escolha uma grande área de interesse. Em seguida, responda às perguntas específicas para montar seu PDI de forma rápida.</p>
+				<ol>
+					<li>Informe seus dados básicos.</li>
+					<li>Escolha a área profissional (1 a 7).</li>
+					<li>Responda às cinco perguntas exibidas.</li>
+				</ol>
+			</header>
+
+			<p class="menu-lock-hint">Complete o formulário para desbloquear o menu lateral.</p>
+
+			<section class="progress-panel" aria-live="polite">
+				<div class="progress-header">
+					<span data-progress-label>Progresso: 0/3 etapas</span>
+					<strong data-progress-percent>0%</strong>
+				</div>
+				<div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+					<div class="progress-bar-fill" data-progress-fill></div>
+				</div>
+				<p class="progress-helper" data-progress-helper>Informe seus dados para liberar as perguntas.</p>
+			</section>
+
+			<form id="pdiForm" novalidate>
+				<section class="form-grid">
+					<div class="field-row" data-field="studentName">
+						<label for="studentName">Nome completo *</label>
+						<input type="text" id="studentName" name="studentName" required>
+						<small class="error-hint" aria-live="polite"></small>
+					</div>
+
+					<div class="field-row" data-field="studentEmail">
+						<label for="studentEmail">Email institucional *</label>
+						<input type="email" id="studentEmail" name="studentEmail" required>
+						<small class="error-hint" aria-live="polite"></small>
+					</div>
+
+					<div class="field-row full" data-field="areaSelect">
+						<label for="areaSelect">Escolha a área profissional *</label>
+						<select id="areaSelect" name="areaSelect" required>
+							<option value="">Selecione uma opção...</option>
+							<option value="direito">1 - Direito</option>
+							<option value="informatica">2 - Informática e TI</option>
+							<option value="saude">3 - Saúde e Esportes</option>
+							<option value="gestao">4 - Gestão e Negócios</option>
+							<option value="engenhariaArquitetura">5 - Engenharia e Arquitetura</option>
+							<option value="engenhariaIndustria">6 - Engenharia e Indústria</option>
+							<option value="educacao">7 - Educação e Licenciatura</option>
+						</select>
+						<small class="error-hint" aria-live="polite"></small>
+					</div>
+				</section>
+
+				<section id="areaDetails" class="area-details" aria-live="assertive">
+					<p class="placeholder">Selecione uma área para carregar as perguntas correspondentes.</p>
+				</section>
+
+				<div class="actions">
+					<button type="submit" class="btn primary">Enviar respostas</button>
+					<button type="reset" class="btn ghost">Limpar tudo</button>
+				</div>
+
+				<div id="feedback" class="feedback" aria-live="assertive"></div>
+			</form>
+
+			<section id="submissionSummary" class="summary-card" hidden aria-live="polite">
+				<p class="unlock-badge">Menu desbloqueado ✅</p>
+				<h2>Resumo do seu PDI</h2>
+				<p class="summary-intro">Veja os principais destaques antes de seguir navegando.</p>
+				<ul class="summary-list">
+					<li><span>Aluno</span><strong data-summary-name>—</strong></li>
+					<li><span>Email</span><strong data-summary-email>—</strong></li>
+					<li><span>Área escolhida</span><strong data-summary-area>—</strong></li>
+					<li><span>Protocolo</span><strong data-summary-protocol>—</strong></li>
+				</ul>
+				<div class="summary-answers" data-summary-answers></div>
+				<div class="cta-grid" data-cta-grid></div>
+			</section>
+		</section>
+	</main>
+
+	<script src="js/formulario.js" defer></script>
+	<script src="js/slidingmenu.js" defer></script>
+</body>
+</html>

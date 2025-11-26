@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Guia de Uso — Plataforma PDI</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/inicio.css">
+	<link rel="stylesheet" href="css/guiadeuso.css">
+</head>
+<body>
+	<header class="CabecalhoHome">
+		<section class="CabecalhoHomePrimeiro">
+			<div class="BotaoSlidingMenu">
+				<button type="button" class="BotaoMenuTrigger" id="menuToggle" aria-label="Abrir menu" aria-controls="mainMenu" aria-expanded="false">
+					<i class="bi bi-list BotaoMenu"></i>
+				</button>
+			</div>
+
+			<div class="LogoEniac">
+				<img src="img/LogoEniac.png" class="EniacLogo" alt="Logo ENIAC">
+			</div>
+		</section>
+
+		<section class="Icones">
+			<i class="bi bi-bell-fill SinoNotificacao" aria-label="Notificações"></i>
+			<i class="bi bi-person-fill IconePerfil" aria-label="Perfil"></i>
+		</section>
+	</header>
+
+	<aside class="SlidingMenu" id="mainMenu" aria-hidden="true">
+		<nav class="SlidingMenuNav" aria-label="Navegação principal">
+			<p class="SlidingMenuSectionTitle">Explorar</p>
+			<ul class="SlidingMenuList">
+				<li><a href="inicio.html"><span class="SlidingMenuIcon"><i class="bi bi-house-door"></i></span><span class="SlidingMenuText">Início</span></a></li>
+				<li><a href="consultoria.html"><span class="SlidingMenuIcon"><i class="bi bi-diagram-3"></i></span><span class="SlidingMenuText">Consultoria</span></a></li>
+				<li><a href="extracurriculares.html"><span class="SlidingMenuIcon"><i class="bi bi-stars"></i></span><span class="SlidingMenuText">Extracurriculares</span></a></li>
+				<li><a href="guiadeuso.html" class="is-active"><span class="SlidingMenuIcon"><i class="bi bi-compass"></i></span><span class="SlidingMenuText">Guia de Uso</span></a></li>
+				<li><a href="https://www.infojobs.com.br/" target="_blank" rel="noopener"><span class="SlidingMenuIcon"><i class="bi bi-rocket-takeoff"></i></span><span class="SlidingMenuText">Oportunidades</span></a></li>
+				<li><a href="perfilprofissional.html"><span class="SlidingMenuIcon"><i class="bi bi-person-badge"></i></span><span class="SlidingMenuText">Perfil Profissional</span></a></li>
+				<li><a href="index.html"><span class="SlidingMenuIcon"><i class="bi bi-grid"></i></span><span class="SlidingMenuText">Login/Cadastro</span></a></li>
+			</ul>
+
+			<p class="SlidingMenuSectionTitle">Suporte</p>
+			<ul class="SlidingMenuList">
+				<li><a href="https://api.whatsapp.com/send?phone=5511912992183&text=%20%20%20%20%20%20%20." target="_blank" rel="noopener"><span class="SlidingMenuIcon"><i class="bi bi-envelope-open"></i></span><span class="SlidingMenuText">Contato</span></a></li>
+			</ul>
+		</nav>
+
+		<div class="SlidingMenuActions">
+			<button type="button" class="SlidingMenuActionButton" data-close-menu>Fechar menu</button>
+		</div>
+	</aside>
+	<div class="SlidingMenuOverlay" id="menuOverlay" hidden></div>
+
+	<main class="GuideMain">
+		<section class="guide-hero" aria-labelledby="guideTitle">
+			<p class="hero-eyebrow">Comece em poucos minutos</p>
+			<h1 id="guideTitle">Guia de Uso da Plataforma PDI</h1>
+			<p class="hero-lead">Aprenda o caminho ideal para navegar pelos módulos, registrar seu Plano de Desenvolvimento Individual e acompanhar as oportunidades que combinam com você.</p>
+			<div class="hero-actions">
+				<a class="btn primary" href="formulario.html">Preencher meu PDI</a>
+				<a class="btn ghost" href="#passo-a-passo">Ver passo a passo</a>
+			</div>
+			<ul class="hero-checklist">
+				<li><i class="bi bi-check2"></i> Fluxo orientado do primeiro acesso ao envio do PDI.</li>
+				<li><i class="bi bi-check2"></i> Dicas práticas para cada área do site.</li>
+				<li><i class="bi bi-check2"></i> Acesso rápido aos principais atalhos.</li>
+			</ul>
+		</section>
+
+		<section class="guide-steps" id="passo-a-passo" aria-labelledby="stepsTitle">
+			<header>
+				<p class="section-eyebrow">Roteiro recomendado</p>
+				<h2 id="stepsTitle">Passo a passo para tirar o máximo do PDI</h2>
+				<p>Use esta sequência para ter clareza desde o cadastro até o acompanhamento contínuo do seu desenvolvimento.</p>
+			</header>
+			<ol class="steps-grid">
+				<li>
+					<span class="step-number">1</span>
+					<h3>Faça login/cadastro</h3>
+					<p>Acesse <strong>Login/Cadastro</strong> para garantir que seus dados fiquem sincronizados. Utilize seu e-mail institucional.</p>
+				</li>
+				<li>
+					<span class="step-number">2</span>
+					<h3>Revise seu perfil</h3>
+					<p>Em <strong>Perfil Profissional</strong>, confira suas habilidades registradas, indicadores e áreas que precisam de reforço.</p>
+				</li>
+				<li>
+					<span class="step-number">3</span>
+					<h3>Conheça as oportunidades</h3>
+					<p>No módulo <strong>Oportunidades</strong> você encontra vagas e eventos alinhados ao seu curso.</p>
+				</li>
+				<li>
+					<span class="step-number">4</span>
+					<h3>Preencha o PDI</h3>
+					<p>Clique em <strong>Formulário PDI</strong>, escolha uma grande área e responda às perguntas guiadas para gerar seu plano.</p>
+				</li>
+				<li>
+					<span class="step-number">5</span>
+					<h3>Planeje trilhas</h3>
+					<p>Use <strong>Extracurriculares</strong> para selecionar cursos complementares e acompanhar o progresso das trilhas.</p>
+				</li>
+				<li>
+					<span class="step-number">6</span>
+					<h3>Agende mentorias</h3>
+					<p>No módulo <strong>Consultoria</strong> você pode solicitar orientação com especialistas para evoluir seu plano.</p>
+				</li>
+			</ol>
+		</section>
+
+		<section class="guide-panels" aria-label="Visão por módulo">
+			<article class="guide-card">
+				<header>
+					<i class="bi bi-house-door"></i>
+					<h3>Início</h3>
+				</header>
+				<p>Acompanhe a evolução extracurricular, metas concluídas e alertas de notificações. Use este painel como checkpoint rápido antes das aulas.</p>
+				<ul>
+					<li>Mostra progresso de trilhas (0 a 8 cursos).</li>
+					<li>Atualiza insights conforme você conclui atividades.</li>
+				</ul>
+			</article>
+			<article class="guide-card">
+				<header>
+					<i class="bi bi-person-badge"></i>
+					<h3>Perfil Profissional</h3>
+				</header>
+				<p>Consolida suas competências técnicas, comportamentais e experiencias. Revise sempre que receber feedback.</p>
+				<ul>
+					<li>Atualize habilidades recém-adquiridas.</li>
+					<li>Compare sua senioridade com as vagas em destaque.</li>
+				</ul>
+			</article>
+			<article class="guide-card">
+				<header>
+					<i class="bi bi-stars"></i>
+					<h3>Extracurriculares</h3>
+				</header>
+				<p>Escolha cursos e eventos recomendados para cada grande área. Cada conclusão aumenta seu score de empregabilidade.</p>
+				<ul>
+					<li>Marque atividades concluídas para liberar novas sugestões.</li>
+					<li>Use os filtros para equilibrar soft e hard skills.</li>
+				</ul>
+			</article>
+			<article class="guide-card">
+				<header>
+					<i class="bi bi-diagram-3"></i>
+					<h3>Consultoria</h3>
+				</header>
+				<p>Canal direto com especialistas para revisar seu PDI. Ótimo para quem busca recomendações personalizadas.</p>
+				<ul>
+					<li>Envie dúvidas específicas sobre carreira ou cursos.</li>
+					<li>Receba devolutivas com plano de ação semanal.</li>
+				</ul>
+			</article>
+			<article class="guide-card">
+				<header>
+					<i class="bi bi-rocket-takeoff"></i>
+					<h3>Oportunidades</h3>
+				</header>
+				<p>Integração com portais de emprego para você candidatar-se rapidamente. Utilize os filtros para adequar ao seu momento.</p>
+				<ul>
+					<li>Separe favoritados para acompanhar feedbacks.</li>
+					<li>Compare os requisitos com seu perfil atualizado.</li>
+				</ul>
+			</article>
+			<article class="guide-card">
+				<header>
+					<i class="bi bi-clipboard2-check"></i>
+					<h3>Formulário PDI</h3>
+				</header>
+				<p>Coração da plataforma. Após preencher, você desbloqueia o menu lateral e recebe um resumo pronto para compartilhar.</p>
+				<ul>
+					<li>Escolha uma das 7 áreas estratégicas.</li>
+					<li>Receba dicas e CTAs personalizados ao finalizar.</li>
+				</ul>
+			</article>
+		</section>
+
+		<section class="guide-shortcuts" aria-labelledby="shortcutsTitle">
+			<header>
+				<p class="section-eyebrow">Atalhos úteis</p>
+				<h2 id="shortcutsTitle">Continue evoluindo depois do envio</h2>
+				<p>Essas ações mantêm seu plano vivo e garantem respostas rápidas da equipe.</p>
+			</header>
+			<div class="shortcut-grid">
+				<article>
+					<h3>Atualize seu PDI mensalmente</h3>
+					<p>Reabra o formulário, ajuste metas e gere um novo protocolo para comparar resultados.</p>
+				</article>
+				<article>
+					<h3>Compartilhe com a consultoria</h3>
+					<p>Use o resumo desbloqueado para enviar pelo WhatsApp institucional e receber feedback em até 48h.</p>
+				</article>
+				<article>
+					<h3>Combine trilhas e oportunidades</h3>
+					<p>Ao concluir um curso extracurricular, busque uma vaga relacionada e registre no perfil profissional.</p>
+				</article>
+			</div>
+		</section>
+
+		<section class="guide-faq" aria-labelledby="faqTitle">
+			<h2 id="faqTitle">Dúvidas rápidas</h2>
+			<div class="faq-list">
+				<article>
+					<h3>1. Preciso finalizar o PDI para destravar o menu?</h3>
+					<p>Sim. Após preencher e enviar o formulário, o menu lateral é liberado e o resumo com protocolos fica disponível.</p>
+				</article>
+				<article>
+					<h3>2. Posso editar respostas depois?</h3>
+					<p>Pode. Basta reabrir o formulário, carregar os dados salvos no navegador e reenviar.</p>
+				</article>
+				<article>
+					<h3>3. Como acompanho minhas mentorias?</h3>
+					<p>No módulo de Consultoria você visualiza o histórico de solicitações e confirmações de encontro.</p>
+				</article>
+			</div>
+		</section>
+	</main>
+
+	<script src="js/slidingmenu.js" defer></script>
+</body>
+</html>
